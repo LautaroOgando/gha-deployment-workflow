@@ -4,31 +4,28 @@ on:
   push:
     branches: [main]
     paths:
-      - 'index.html'  # Solo ejecuta el workflow si este archivo cambia
+      - 'index.html'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: write # Otorga permisos de escritura al GITHUB_TOKEN para desplegar en GitHub Pages
-      id-token: write # Necesario para la autenticación OIDC
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@vlatest
+        uses: actions/checkout@v4 # Keep v4 for checkout - very stable
 
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@vlatest # Esto configura el entorno de GitHub Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5 # This is correct and stable for configure-pages
 
-      - name: Subir artefacto
-        uses: actions/upload-pages-artifact@vlatest
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4 # Use v4 for upload-pages-artifact - this is the current stable
         with:
-          # Ruta a tus archivos estáticos (donde está index.html)
-          # Si index.html está en la raíz de tu repo, usa '.'
-          # Si está en una carpeta 'docs', usa './docs'
           path: '.'
 
-      - name: Desplegar a GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@vlatest # Esto despliega tu artefacto a GitHub Pages
+        uses: actions/deploy-pages@v4 # Use v4 for deploy-pages - this is the current stable
