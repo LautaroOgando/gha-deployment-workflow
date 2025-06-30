@@ -22,7 +22,7 @@ jobs:
         uses: actions/configure-pages@v5 # This is correct and stable for configure-pages
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@38a761c4ba4b1e273eb4f97a26d6cd6ff5d5064b # Use v1s for upload-pages-artifact - this is the current stable
+        uses: actions/upload-pages-artifact@v4 # Use v1s for upload-pages-artifact - this is the current stable
         with:
           path: '.'
 
