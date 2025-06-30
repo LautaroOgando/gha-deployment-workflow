@@ -16,13 +16,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@vlatest
 
       - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5 # Esto configura el entorno de GitHub Pages
+        uses: actions/configure-pages@vlatest # Esto configura el entorno de GitHub Pages
 
       - name: Subir artefacto
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@vlatest
         with:
           # Ruta a tus archivos estáticos (donde está index.html)
           # Si index.html está en la raíz de tu repo, usa '.'
@@ -31,4 +31,4 @@ jobs:
 
       - name: Desplegar a GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # Esto despliega tu artefacto a GitHub Pages
+        uses: actions/deploy-pages@vlatest # Esto despliega tu artefacto a GitHub Pages
