@@ -22,10 +22,10 @@ jobs:
         uses: actions/configure-pages@v5 # This is correct and stable for configure-pages
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4 # Use v4 for upload-pages-artifact - this is the current stable
+        uses: actions/upload-pages-artifact@v1 # Use v1 for upload-pages-artifact - this is the current stable
         with:
           path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1 # Use v1 for deploy-pages - this is the current stable
+        uses: actions/deploy-pages@v4 # Use v4 for deploy-pages - this is the current stable
