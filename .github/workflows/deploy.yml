@@ -28,4 +28,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # Use v4 for deploy-pages - this is the current stable
+        uses: actions/deploy-pages@v1 # Use v1 for deploy-pages - this is the current stable
