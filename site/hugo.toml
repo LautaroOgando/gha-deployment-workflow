@@ -1,4 +1,4 @@
-baseURL = 'https://LautaroOgando.github.io/gh-actions/'
+baseURL = 'https://lautaroogando.github.io/gha-deployment-workflow/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Lautaro Ogando'
 theme = 'hello-friend-ng'
