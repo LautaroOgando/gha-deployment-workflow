@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'index.html'
+      - 'site/**'
 
 jobs:
   deploy:
@@ -17,6 +17,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4 
+        with:
+          submodules: true
+ 
+      # --- Hugo Specific Steps ---
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.5.0 # This action installs Hugo
+        with:
+          hugo-version: 'latest' # Use 'latest' or a specific version like '0.128.2'
+          extended: true # Essential if your theme uses Sass/SCSS
+          
+      - name: Build Hugo Site
+        run: hugo --source site # Command to build your Hugo site    
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5 
@@ -24,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3 
         with:
-          path: '.'
+          path: './site/public' # Path to the built site directory
 
       - name: Deploy to GitHub Pages
         id: deployment
