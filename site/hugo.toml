@@ -2,3 +2,6 @@ baseURL = 'https://lautaroogando.github.io/gha-deployment-workflow/'
 languageCode = 'en-us'
 title = 'Lautaro Ogando'
 theme = 'hello-friend-ng'
+
+[params]
+homeSubtitle = "DevOps"
